@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
-    int delay = 0;
+    float fireElapsedTime = 0;
+    public float fireDelay = 0.2f;
     GameObject a,b;
     public GameObject bullet;
     Rigidbody2D rb;
@@ -29,21 +30,21 @@ public class Spaceship : MonoBehaviour
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical")*speed));
 
-        if(Input.GetKeyDown(KeyCode.Space) && delay > 25)
-            Shoot();
+        fireElapsedTime += Time.deltaTime;
 
-        delay++;
+        if(Input.GetKey(KeyCode.Space) && fireElapsedTime >= fireDelay){
+            fireElapsedTime = 0;
+            Shoot();
+        }      
     }
 
     public void Damage(){
-        health--;
         if(health == 0){
             Destroy(gameObject);
         }
     }
 
     void Shoot(){
-        delay = 0;
         Instantiate(bullet,a.transform.position,Quaternion.identity);
         Instantiate(bullet,b.transform.position,Quaternion.identity);
     }
