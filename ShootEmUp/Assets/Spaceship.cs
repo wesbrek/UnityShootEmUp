@@ -39,6 +39,7 @@ public class Spaceship : MonoBehaviour
     }
 
     public void Damage(){
+        health--;
         if(health == 0){
             Destroy(gameObject);
         }

@@ -240,5 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29c54002a2ae334b9e2f2e47ab236dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDelay: 0.2
   bullet: {fileID: 1073361421576362654, guid: 0c02bba52e69ba44c9c3e6feb0bae5e2, type: 3}
   speed: 4
