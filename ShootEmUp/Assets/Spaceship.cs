@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
-    float fireElapsedTime = 0;
-    public float fireDelay = 0.2f;
+    
     GameObject a,b;
-    public GameObject bullet;
     Rigidbody2D rb;
-    public float speed;
+    float fireElapsedTime = 0;
     int health =3;
+    public GameObject bullet;
+    public float speed;
+    public float fireDelay = 0.2f;
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
@@ -21,7 +22,7 @@ public class Spaceship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
