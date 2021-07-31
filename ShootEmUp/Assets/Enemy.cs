@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Damage(){
+    public void Damage(){
         health--;
         if(health == 0){
             Destroy(gameObject);
