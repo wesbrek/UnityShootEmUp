@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
     public bool canShoot;
     public float fireRate;
     public float health;
-    public GameObject bullet;
+    public GameObject bullet, explosion;
+    public int score;
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject,15);
+        Destroy(gameObject,10);
         if(!canShoot) return;
         fireRate = fireRate + (Random.Range(fireRate/-2,fireRate/2));
         InvokeRepeating("Shoot", fireRate, fireRate);
@@ -40,12 +41,16 @@ public class Enemy : MonoBehaviour
     }
 
     void Die(){
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
         Destroy(gameObject);
     }
 
     public void Damage(){
         health--;
         if(health == 0){
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
             Destroy(gameObject);
         }
     }

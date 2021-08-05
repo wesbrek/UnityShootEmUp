@@ -164,3 +164,5 @@ MonoBehaviour:
   fireRate: 2
   health: 4
   bullet: {fileID: 4774405476596968743, guid: 16dee53d3ee14004f85f4c212b858373, type: 3}
+  explosion: {fileID: 3335828779237550102, guid: 02c1ec8616e8a0a43b680353b6a40549, type: 3}
+  score: 300
