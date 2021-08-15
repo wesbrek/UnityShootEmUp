@@ -165,4 +165,7 @@ MonoBehaviour:
   health: 4
   bullet: {fileID: 4774405476596968743, guid: 16dee53d3ee14004f85f4c212b858373, type: 3}
   explosion: {fileID: 3335828779237550102, guid: 02c1ec8616e8a0a43b680353b6a40549, type: 3}
+  healthObject: {fileID: 6319053342769752182, guid: 46fef585af8d9244cb0f4eb32bff7e0e, type: 3}
   score: 300
+  isCircularDirection: 0
+  radius: 0

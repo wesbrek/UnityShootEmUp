@@ -13,6 +13,8 @@ public class Spaceship : MonoBehaviour
     public float speed;
     public float fireDelay = 0.2f;
 
+    float x,y;
+
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         a = transform.Find("a").gameObject;
@@ -22,7 +24,8 @@ public class Spaceship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        PlayerPrefs.SetInt("Health", health);
+        Vector3 pos = transform.position;
     }
 
     // Update is called once per frame
@@ -36,16 +39,21 @@ public class Spaceship : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && fireElapsedTime >= fireDelay){
             fireElapsedTime = 0;
             Shoot();
-        }      
+        }   
+
+        x = Mathf.Round(transform.position.x * 100.0f) * 0.01f;
+        y = Mathf.Round(transform.position.y * 100.0f) * 0.01f;
+        PlayerPrefs.SetFloat("posX", x);
+        PlayerPrefs.SetFloat("posY", y);
     }
 
     public void Damage(){
         health--;
+        PlayerPrefs.SetInt("Health", health);
         StartCoroutine(Blink());
         if(health == 0){
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
-            
         }
     }
 
@@ -58,5 +66,10 @@ public class Spaceship : MonoBehaviour
     void Shoot(){
         Instantiate(bullet,a.transform.position,Quaternion.identity);
         Instantiate(bullet,b.transform.position,Quaternion.identity);
+    }
+
+    public void AddHealth(){
+        health++;
+        PlayerPrefs.SetFloat("Health", health);
     }
 }

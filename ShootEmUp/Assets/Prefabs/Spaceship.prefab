@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472417746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0.155, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2073122872204310824}
@@ -242,5 +242,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1073361421576362654, guid: 0c02bba52e69ba44c9c3e6feb0bae5e2, type: 3}
   explosion: {fileID: 3335828779237550102, guid: 02c1ec8616e8a0a43b680353b6a40549, type: 3}
-  speed: 4
+  speed: 20
   fireDelay: 0.2
