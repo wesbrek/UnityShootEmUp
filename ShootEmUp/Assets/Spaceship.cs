@@ -25,6 +25,7 @@ public class Spaceship : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("Health", health);
+        PlayerPrefs.SetInt("Score", 0);
         Vector3 pos = transform.position;
     }
 
@@ -48,12 +49,14 @@ public class Spaceship : MonoBehaviour
     }
 
     public void Damage(){
-        health--;
-        PlayerPrefs.SetInt("Health", health);
-        StartCoroutine(Blink());
-        if(health == 0){
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(gameObject, 0.1f);
+        if(health > 0){
+            health--;
+            PlayerPrefs.SetInt("Health", health);
+            StartCoroutine(Blink());
+            if(health == 0){
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.1f);
+            }
         }
     }
 
@@ -69,7 +72,25 @@ public class Spaceship : MonoBehaviour
     }
 
     public void AddHealth(){
-        health++;
-        PlayerPrefs.SetFloat("Health", health);
+        if(health > 0){
+            health++;
+            PlayerPrefs.SetInt("Health", health);
+        }
+    }
+ 
+    public void SpeedUp(){
+        speed += 5;
+    }
+
+    public void SpeedDown(){
+        speed -= 5;
+    }
+
+    public void GravityUp(){
+        rb.gravityScale++;
+    }
+
+    public void GravityDown(){
+        rb.gravityScale--;
     }
 }

@@ -84,6 +84,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1764864651337912324, guid: df4657c89b31b3e46bd83dbd36696cba, type: 3}
     - target: {fileID: 6104925729580478385, guid: 22d05f738a0ba07448ea0689ebb05636, type: 3}
+      propertyPath: gravityUpObject
+      value: 
+      objectReference: {fileID: 2100363624420161287, guid: f673218dc8a3c0d4788332bc95407726, type: 3}
+    - target: {fileID: 6104925729580478385, guid: 22d05f738a0ba07448ea0689ebb05636, type: 3}
       propertyPath: isCircularDirection
       value: 1
       objectReference: {fileID: 0}

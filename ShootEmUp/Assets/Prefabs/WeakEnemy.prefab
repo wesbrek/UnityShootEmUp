@@ -170,6 +170,10 @@ MonoBehaviour:
   bullet: {fileID: 4774405476596968743, guid: 16dee53d3ee14004f85f4c212b858373, type: 3}
   explosion: {fileID: 3335828779237550102, guid: 02c1ec8616e8a0a43b680353b6a40549, type: 3}
   healthObject: {fileID: 6319053342769752182, guid: 46fef585af8d9244cb0f4eb32bff7e0e, type: 3}
+  speedUpObject: {fileID: 4655367210944705599, guid: 98aae4c813939f24fbadea3a5c08cb02, type: 3}
+  speedDownObject: {fileID: 3573714525654384548, guid: 41853d8655e84f749b5c552486de3b9f, type: 3}
+  gravityUpObject: {fileID: 2100363624420161287, guid: f673218dc8a3c0d4788332bc95407726, type: 3}
+  gravityDownObject: {fileID: 404630205833009555, guid: 059f3690b9755c446b0094cc87532f46, type: 3}
   score: 200
   isCircularDirection: 0
   radius: 0

@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public bool canShoot;
     public float fireRate;
     public float health;
-    public GameObject bullet, explosion, healthObject;
+    public GameObject bullet, explosion, healthObject, speedUpObject, speedDownObject, gravityUpObject, gravityDownObject;
     public int score;
 
     public bool isCircularDirection;
@@ -61,9 +61,18 @@ public class Enemy : MonoBehaviour
     public void Damage(){
         health--;
         if(health == 0){
-            if((int)Random.Range(0,5) == 0){
+            if((int)Random.Range(0,3) == 0){
                 Instantiate(healthObject, transform.position, Quaternion.identity);
+            }else if((int)Random.Range(0,3) == 0){
+                Instantiate(speedUpObject, transform.position, Quaternion.identity);
+            }else if((int)Random.Range(0,3) == 0){
+                Instantiate(speedDownObject, transform.position, Quaternion.identity);
+            }else if((int)Random.Range(0,3) == 0){
+                Instantiate(gravityUpObject, transform.position, Quaternion.identity);
+            }else if((int)Random.Range(0,3) == 0){
+                Instantiate(gravityDownObject, transform.position, Quaternion.identity);
             }
+
             Instantiate(explosion, transform.position, Quaternion.identity);
             PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
             Destroy(gameObject);
