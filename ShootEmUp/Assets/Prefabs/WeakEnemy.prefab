@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 2
+  ySpeed: 3
   canShoot: 1
   fireRate: 1
   health: 2
